@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+
+    color:white;
+}
+body{
+    background: black;
+    background-position:center;
+    background-size:cover; 
+}
+header .menu button{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border:solid 1px;
+    background: transparent;
+    padding:1.7vw 5vw;
+    font-size: 1.5vw;
+    cursor: pointer;
+}
+div{
+    text-align: center;
+    margin-top: 50vh;
+}
+div a button{
+    cursor: pointer;
+}
+#levels button{
+          
+    background: transparent;
+    margin-top: 1vw;
+    padding:1vw 5vw;
+    font-size: 1.2vw;
+    font-weight: bolder;
+    border-color:white;
+    color:white;
+    cursor: pointer;
+   
+}
+@media screen and (max-width:1200px){
+    #levels button{
+        padding:3vw 12vw;
+        font-size: 2vw;
+        margin-top: 2vw;
+    }
+    header .menu button{
+        padding:4vw 12vw;
+        font-size: 2vw;
+    }
+}

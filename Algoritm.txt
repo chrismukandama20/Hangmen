@@ -1,0 +1,5 @@
+1. store multiply words for the game in an array
+2. create a function that randomly chooses words from the array
+3. create a if that returns an incorrect or correct value
+4. create multiply dashes depending on number of words
+5  depending if each letter on each dash is correct return an incorrect or correct value on the console

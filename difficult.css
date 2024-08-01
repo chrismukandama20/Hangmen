@@ -1,0 +1,483 @@
+*{
+    margin: 0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: rgb(8, 8, 8);
+}
+main{
+    width:100%;
+    height:100%;
+}
+/*Top BAR Stylings*/
+#top-bar{
+   width: 100vw;
+   height:4vw;
+   background-color: rgba(235, 8, 8, 0.89); 
+   
+}
+#top-bar div{
+    display: inline-block;
+}
+
+/*TRYS STYLING*/
+#trys{
+    width:10vw;
+    height:4vw;
+    background-color: rgb(20, 15, 48);  
+    color: white;
+    text-align: center;
+    line-height: 4vw;
+    font-size: 2vw;
+}
+/*Wins*/
+#wins{
+    width:10vw;
+    height:4vw;
+    background-color: rgb(5, 56, 45);  
+    color: white;
+    text-align: center;
+    line-height: 4vw;
+    font-size: 2vw;
+    float:right;
+}
+/*RESTART BUTTON STYLING*/
+#Restart-button{
+    width:10vw;
+    height:4vw;
+    background: tomato;
+    font-size: 2vw;
+    border: none;
+    float:right;
+    cursor: pointer;
+    text-align: center;
+}
+/*LOSSES STYLING*/
+#losses{
+    width:10vw;
+    height:4vw;
+    background-color: rgb(5, 56, 45);  
+    color: white;
+    text-align: center;
+    line-height: 4vw;
+    font-size: 2vw;
+    margin-left: -0.4vw;
+    position: absolute;
+    z-index: 20;
+}
+
+/*GAME NAME STYLING*/
+#title{
+    width:60vw;
+    height:2vw;
+    background-color: transparent;  
+    color: white;
+    text-align: center;
+    line-height: 4vw;
+    font-size: 2vw;
+    margin-left: 7vw;
+    
+}
+
+#key-press{
+    margin-top:5vw;
+    margin-left:2vw;
+}
+
+input{
+    background: rgb(8, 8, 8);
+    color:white;
+    width:3.5vw;
+    margin-left:1vw;
+    border:none;
+    border-bottom:solid white 2px;
+    font-size:2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+input:focus{
+  
+  outline: none;
+}
+.key-press{
+    
+    margin-top:2px;
+    display:inline-block;
+}
+/*HANGED MEN*/
+.hanged-men{
+    float: right;
+    margin-right: 10vw;
+    margin-top: -14vw;
+  
+}
+/*POLLS*/
+.hanged-men .polls{
+    
+}
+/*TOP-POLL*/
+.hanged-men .polls .top-poll{
+    width: 15vw;
+    height: 13px;
+    background:  sienna;
+}
+/*side-POLL*/
+.hanged-men .polls .side-poll{
+    height: 28vw;
+    width:13px;
+    background: sienna;
+    margin-left:13.9vw;
+}
+/*BOTTOM-POLL*/
+.hanged-men .polls .bottom-poll{
+    width: 40vw;
+    height: 13px;
+    background: sienna;
+    margin-left:-20vw;
+}
+/*ROPE*/
+.hanged-men .polls .rope{
+    width: 13px;
+    height: 3.8vw;
+    background: sienna;
+    margin-top:-28.9vw;
+}
+/*HANGED MENS BODY PARTS*/
+.hanged-men .men{
+    margin-left: -2vw;
+}
+/*HEAD*/
+.hanged-men .men .head{
+    width:4vw;
+    height:3.7vw;
+    border:solid rgb(85, 40, 40);
+    border-radius: 100vw;
+    display:none;
+    background:  rgb(85, 40, 40);
+}
+/*Body*/
+.hanged-men .men .body{
+    width:3px;
+    height:7.4vw;
+    background:  black;
+    margin-left:2vw;
+    display:none;
+    background:  rgb(85, 40, 40);
+    
+}
+/*RIGHT_HAND*/
+.hanged-men .men .right-hand{
+    width:3px;
+    height:4vw;
+    background:  black;
+    margin-top:-6.4vw;
+    margin-left:3.6vw; 
+    transform: rotateZ(-60deg);
+    display:none;
+    background:  rgb(85, 40, 40);
+}
+/*LEFT_HAND*/
+.hanged-men .men .left-hand{
+    width:3px;
+    height:4vw;
+    background:  black;
+    margin-top:-3.95vw;
+    margin-left:0.4vw; 
+    transform: rotateZ(60deg);
+    display:none;
+    background:  rgb(85, 40, 40);
+}
+/*RIGHT_LEG*/
+.hanged-men .men .right-leg{
+    width:3px;
+    height:4vw;
+    background:  black;
+    margin-top:1.23vw;
+    margin-left:3.6vw; 
+    transform: rotateZ(-55deg);
+    display:none;
+    background:  rgb(85, 40, 40);
+}
+/*LEFT_LEG*/
+.hanged-men .men .left-leg{
+    width:3px;
+    height:4vw;
+    background:  black;
+    margin-top:-4vw;
+    margin-left:0.4vw; 
+    transform: rotateZ(55deg);
+    display:none;
+    background:  rgb(85, 40, 40);
+}
+/*You Lose Display Style*/
+.win{
+    color:white;
+    font-size: 2rem;
+    margin-top: 4vw;
+    margin-left:1vw;
+    position: absolute;
+    left:0;
+    top:0;
+    width:40vw;
+    height:3vw;
+    padding-top:23vw;
+}
+.loss{
+    color:white;
+    font-size: 2rem;
+    margin-top:;
+    margin-left:;
+    position: absolute;
+    left:0;
+    top:0;
+    width:70%;
+    height:30%;
+    padding-top:31vw;
+    padding-left:3vw;
+}
+.loss button , .win button{
+    background:transparent;
+    padding:1vw 3vw;
+    border-color: white;
+    color:whitesmoke;
+    cursor: pointer;
+}
+/*Word Description*/
+#description{
+    font-size:1.4rem;
+    margin-top:8vw;
+    color:white;
+    text-transform: capitalize;
+    margin-left:3vw;
+    
+}
+/*correct letter displayed*/
+#Word-corrections{
+    
+    margin-top:3vw;
+    font-weight: bolder;
+    margin-left:3vw;
+    width:50%;
+    height: 1vw;
+    text-transform: uppercase;
+    letter-spacing: 12vw;
+    font-size:1.8rem;
+    color: ghostwhite;
+
+}
+.win{
+    margin-top:7vw;
+    margin-left: 3vw;
+}
+#Wins-Losses{
+    margin-left:3vw;
+    font-size:1.2vw;
+    margin-top: 1vw;
+}
+.wins{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.losses{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/*alphabets*/
+.alphabets{
+    width: 46vw;
+    padding-top: 1vw;
+}
+.alphabets{
+    margin-left:1vw;
+    margin-top: 2vw;
+}
+.alphabets div{
+   color:white;
+   font-size: 2vw;
+   background-color: crimson;
+   text-align: center;
+   width:5vw;
+   display: inline-block;
+   height: 3vw;
+   padding-top:0.2vw;
+   margin-top: 1vw;
+   border-radius: 1vw;
+   margin-left: 0.5vw;
+}
+#Exit{
+    display:block;
+}
+#Exit #invisiable-box{
+    color: white;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.445);
+    z-index:30;
+    
+}
+#Exit #invisiable-box div{
+    position: absolute;
+    top:28%;
+    left:30%;
+    border: solid rgb(190, 58, 184) 1px;
+    width:39vw;
+    padding-bottom: 4vw;
+    background: white;
+    color: black;
+    text-align: center;
+}
+#Exit #invisiable-box div h2{
+    margin-top: 5vw;
+    font-size: 2vw;
+}
+#Exit #invisiable-box div button{
+    margin-top:4vw;
+    padding:1vw 3vw;
+    cursor: pointer;
+}
+#Exit #invisiable-box div #yes{
+    margin-left: -1vw;
+}
+#Exit #invisiable-box div #no{
+    margin-left: 1vw;
+}
+@media screen and (max-width:1000px){
+    #top-bar{
+        overflow: hidden;
+        width:90vw;
+    }
+    #description{
+        font-size:4vw;
+      
+    }
+    .hanged-men{
+        margin-top:15vw;
+        margin-right:30vw;
+    }
+   
+    #key-press{
+        text-align: center;
+        margin-top:10vw;
+    }
+    #Word-corrections{
+        font-size:4vw;
+        margin-top: 6vw;
+        text-align: center;
+    }
+    #top-bar{
+        height:13vw;
+        font-size:3vw;
+    }
+    #trys{
+        height:13vw;
+        width:15vw;
+        position: absolute;
+        line-height:12vw;
+        font-size:3vw;
+        
+    }
+    #losses{
+        position: absolute;
+        left:12.5vw;
+        height:13vw;
+        width:20vw;
+        line-height:12vw;
+        font-size:3vw;
+    }
+    #wins{
+        position: absolute;
+        
+        height:13vw;
+        width:20vw;
+        line-height:12vw;
+        font-size:3vw;
+        margin-left: -14vw;
+    }
+    #Restart-button{
+        height:13vw;
+        width:14vw;
+        position: absolute;
+        right: 0;
+        line-height:12vw;
+        font-size:3vw;
+        padding-left:1.3vw;
+    }
+    input{
+        width: ;
+        margin-top: 7vw;
+    }
+    #title{
+        padding-left: 13vw;
+        font-size:3vw;
+        padding-top: 4vw;
+    }
+    /*TOP-POLL*/
+    .hanged-men .polls .top-poll{
+        width: 18vw;
+        
+    }
+    /*ROPE*/
+    .hanged-men .polls .rope{
+        height: 10vw;
+        margin-top:-40vw;
+    }
+    /*side-POLL*/
+    .hanged-men .polls .side-poll{
+        width: 13px;
+        height: 35vw;
+
+    }
+    /*HANGED MENS BODY PARTS*/
+    .hanged-men .men{
+        transform: scale(1.2);
+        margin-left: 0;
+        margin-top: 1vw;
+    }
+    .win , .loss{
+
+        padding-left:;
+        background: rgb(27, 41, 41);
+        width:97%;
+        height:40%;
+        margin-top:45vw;
+        padding-top:7vw;
+        text-align: center;
+    }
+    .win , .loss p{
+        font-size: 7vw;
+    }
+    .loss .answer{
+        font-size: 6vw;
+    }
+    .loss button , .win button{
+        line-height:-30vw;
+        padding: 3vw 10vw;
+        font-size: 3vw;
+    }
+    #Exit #invisiable-box div{
+        width: 80%;
+        padding-bottom: 5vw;
+        left:10%;
+        top:40%;
+    }
+    #Exit #invisiable-box div h2{
+        font-size: 4vw;
+    }
+    #Exit #invisiable-box div button {
+        padding:3vw 5vw;
+        margin-top: 3vw;
+    }
+    #Exit #invisiable-box div #yes{
+        margin-left: -3vw;
+    }
+    #Exit #invisiable-box div #no{
+        margin-left: 4vw;
+    }
+}
+@media screen and (max-width:700px){
+    .hanged-men{
+        margin-top:35vw;
+    }
+}

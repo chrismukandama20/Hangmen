@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="easy.css">
+    <title>Hangman</title>
+</head>
+<body>
+    <main>
+        <!--RESULTS-->
+        <div>
+           
+        </div>
+        <!--Wins-Losses-->
+        <div id="top-bar">   
+            <div id="trys"></div>
+            <div id="losses">Losses:</div>
+            <div id="title">EASY</div>
+            <button id="Restart-button" onclick="
+              hello();                                
+           ">Menu</button>
+            <div id="wins">Wins:</div>
+        </div>
+        
+        <div id="description">Hint: </div>
+        <div id="Word-corrections"></div>
+        <div id="key-press"></div>
+        <div class="hanged-men">
+            <!--POLL-->
+            <div class="polls">
+                <div class="top-poll"></div>
+                <div class="side-poll"></div>
+                <div class="bottom-poll"></div>
+                <div class="rope"></div>
+            </div>
+            <!--HANGED MENS BODY-->
+            <div class="men">
+               <div class="head"></div>
+               <div class="body"></div>
+               <div class="right-hand"></div>
+               <div class="left-hand"></div>
+               <div class="right-leg"></div>
+               <div class="left-leg"></div>
+               
+            </div>
+        </div>
+        <!--
+        <div class='alphabets'>
+           <div>A</div>
+           <div>B</div>
+           <div>C</div>
+           <div onclick="">D</div>
+           <div onclick="">E</div>
+           <div onclick="">F</div>
+           <div onclick="">G</div>
+           <div onclick="">H</div>
+           <div onclick="">I</div>
+           <div onclick="">J</div>
+           <div onclick="">K</div>
+           <div onclick="">L</div>
+           <div onclick="">M</div>
+           <div onclick="">N</div>
+           <div onclick="">O</div>
+           <div onclick="">P</div>
+           <div onclick="">Q</div>
+           <div onclick="">R</div>
+           <div onclick="">S</div>
+           <div onclick="">T</div>
+           <div onclick="">U</div>
+           <div onclick="">V</div>
+           <div onclick="">W</div>
+           <div onclick="">X</div>
+           <div onclick="">Y</div>
+           <div onclick="">Z</div>
+
+
+        </div>
+        -->
+        <div class="results"></div>
+        <div id="Exit"></div>
+    </main>
+    <script>
+            let Exit =document.getElementById('Exit');
+            function hello(){
+                Exit.style.display = 'block';
+                Exit.innerHTML = `
+                 <div id="invisiable-box">
+                   <div>
+                    <h2>Are you sure you want to Exit</h2>
+                    <a href="index.html" ><button id="yes">Yes</button></a>
+                    <button id="no" onclick="
+                            Exit.style.display = 'none';
+                    ">No</button>
+                   </div>
+                 </div>
+                `;
+            }
+        </script>
+    <script src="easy.js">
+       
+    </script>
+</body>
+</html>

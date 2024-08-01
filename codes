@@ -1,0 +1,253 @@
+let Keypress= document.querySelector('#key-press');
+let Inputs= document.querySelector('input'); 
+let Wins = document.querySelector('#wins'); 
+let Losses = document.querySelector('#losses');
+let Men =  document.querySelector('.men');
+let Description = document.querySelector('#description');
+let Body = document.querySelector('body');
+let Corrections =document.querySelector('#Word-corrections');
+let Words = '';
+let Trys = document.querySelector('#trys');
+
+//Stores the Players Wins And Losses
+let Scores = JSON.parse(localStorage.getItem('wins1')) || {
+        wins:0,
+        lose:0
+
+};
+Wins.innerHTML = `<span class= 'wins'>Wins:${Scores.wins}</span>`;
+Losses.innerHTML = `<span class= 'losses'>Losses:${Scores.lose}</span>`;
+
+//Chooses Random Words
+function RandomWords(){
+    let Random = Math.random();
+    if(Random >= 0 && Random < 0.5){
+        Words = 'cool';
+        Description.innerHTML = 'Someone who is calm and very attractive';
+        console.log(Words);
+    }else if(Random >= 0.5 && Random < 1){
+        Words = 'disturb';
+        Description.innerHTML = "When you are irrated about Something ";
+        console.log(Words);
+    }
+}
+//Calling the RandomWords Function
+    RandomWords();
+///Stores the values of the users inputs Wrong or Right    
+    let num = {
+       character: Words.charAt(-1),
+       number :''
+    };
+    let count = 0;
+    //Stores the users number of Incorrect answers 
+    let Wrongs ={
+        wrongs:0,
+        trys:7
+    };
+    Trys.innerHTML += Wrongs.trys;
+ 
+    const dashes ={
+        Dash:``,
+        OnscreenKeyboard:``
+    };
+    //Displays the input element Multiply times on the web and is the center of were allthe Web functionalities happend 
+    function Looping(){
+        for(let i = 0; i < Words.length;i++){
+      
+            // A variable that displays multiply input element    
+               
+                   dashes.Dash=`
+                   <input id="letter${i}"  type="text" oninput="
+                   let Letter= document.querySelector('#letter${i}'); 
+                   let number = 0;
+                     
+                     if(event.data === Words.charAt(${i})){
+                         console.log('correct');
+                         
+                      }else{  
+                          console.log(incorrect());
+                          
+                      }  
+                      if(event.data === Words.charAt(${i})){
+                         num.character += event.data;
+                         
+                       }else if(event.data !== Words.charAt(${i})){
+                         num.number += '1';
+                         Correction(Words.charAt(${i}) , num.number);
+                       }
+                       
+                       Results(num);
+                    
+                   " maxlength= "1"  onkeyup = "
+                   let Letter= document.querySelector('#letter${i + 1}');
+                   
+                   if(event.key.length === 1 && event.key === Words.charAt(${i})){
+                     Letter.focus();
+                 }
+                  " onfocus = "
+                   let Letter= document.querySelector('#letter${i}');
+                  ">
+                `,
+                 dashes.OnscreenKeyboard = function(y){
+                    let Letter= document.querySelector(`#letter${i}`);
+                    
+                        Letter.value += y;
+                    
+                   
+                    
+                 };
+    
+               let Letterss= document.querySelector(`#letter${Words.length}`);
+
+               
+               Keypress.innerHTML += `${dashes.Dash}`;
+               
+       
+           }
+    }
+    
+    Looping();
+    console.log(dashes);
+//Displays Results 
+    function Results(nums){
+        let results = '';
+        if(nums.character.length === Words.length){            
+            results = 'win';
+              
+        }else if(nums.number === '1111111'){ 
+            results ='lose';    
+        }
+
+        if(results === 'win'){
+            Scores.wins += 1;
+            Body.innerHTML += `
+            <div class="loss">
+              Well Done!!! You Win
+              <p>Wins:${Scores.wins }  Losses:${Scores.lose}</p>
+            </div>
+            `;
+        }else if(results === 'lose'){
+            Scores.lose += 1;
+            Body.innerHTML += `
+            <div class="loss">
+               You lose
+               <p>Wins:${Scores.wins}  Losses:${Scores.lose}</p>
+               <button>Next</button>
+            </div>
+            
+            `;
+        }
+        console.log(nums);
+        localStorage.setItem('wins1' ,JSON.stringify(Scores));
+    }
+
+    //Displays Body parts depending on Incorrect answers
+    function incorrect(){
+    //BODY PARTS
+        const Head = document.querySelector('.head'); 
+        const Body = document.querySelector('.body');
+        const RightHand = document.querySelector('.right-hand');
+        const LeftHand = document.querySelector('.left-hand');
+        const RightLeg = document.querySelector('.right-leg');
+        const LeftLeg = document.querySelector('.left-leg');
+        Wrongs.wrongs += 1;
+        Wrongs.trys -= 1;
+        if(Wrongs.wrongs === 1 && Wrongs.wrongs < 7){
+          Head.style["display"] = 'block';
+          console.log('wrong');
+          
+        }else if(Wrongs.wrongs === 2 && Wrongs.wrongs < 7){
+          Body.style["display"] = 'block';
+          console.log('wrong');
+         
+        }else if(Wrongs.wrongs === 3 && Wrongs.wrongs < 7){
+          RightHand.style["display"] = 'block';
+          console.log('wrong');
+          
+        }else if(Wrongs.wrongs === 4 && Wrongs.wrongs < 7){
+          LeftHand.style["display"] = 'block';
+          console.log('wrong');
+        
+        }else if(Wrongs.wrongs === 5 && Wrongs.wrongs < 7){
+          RightLeg.style["display"] = 'block';
+          console.log('wrong');
+        
+        }else if(Wrongs.wrongs === 6 && Wrongs.wrongs < 7){
+          LeftLeg.style["display"] = 'block';
+          console.log('You Lose');
+          console.log('wrong');
+        
+        }else if(Wrongs.wrongs > 6 && Wrongs.wrongs < 7){
+            console.log('you lose');
+            
+        }else if(Wrongs.wrongs <= 0 && Wrongs.wrongs <= 7){
+            Scores.lose += 1;
+            Body.innerHTML = 'You lose';
+        }
+        console.log(Wrongs);
+        Trys.innerHTML = `<p>${Wrongs.trys}</p>`;
+      
+    }
+    
+    function Correction(correction ,num){
+       if(num.length <= 2){
+        Corrections.innerHTML += correction;
+       }else{
+           Corrections.innerHTML += '';
+       }
+    }
+    onclick = "
+                   
+                  alphabets.Btn((event.srcElement.className));
+                   
+                  "
+
+
+
+
+
+
+                  
+    function keyboard(name){
+    
+        let LetterA = document.querySelectorAll('.alphabets div');
+        let LetterB = document.querySelector('.letterB');
+        let classes = name;
+        console.log(classes);
+
+        let Lettersss = document.querySelector('.' + classes);
+        let dahses = document.querySelectorAll('input');
+        console.log(dashes.length);
+        
+        // letter 
+        for(let i = 0; i < LetterA.length;i++){
+            let element = LetterA[i];
+            element.addEventListener("click" , function(){
+            
+                if(Lettersss.value === '' && Lettersss.value.length <= 1){
+                    Lettersss.value += element.innerText;
+                }else{
+   
+                }
+                });
+
+        }
+        let array = []
+        for(let i = 0; i < Words.length;i++){
+             array[i]
+            let dahses= document.querySelector(`.letter${i}`);
+            array.push(dahses);
+            if(array[i].value !== Words.charAt(i) && array[i].value !== ''){
+                incorrect();
+            }
+        }
+        
+            
+    }
+    
+    /*
+    let classes = localStorage.getItem('class');
+    console.log(classes);
+    let Letters = document.querySelector('.' + classes);
+    console.log(Letters);
+     Letters.value = 'a';*/
