@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      #textbox{
+        height: 1vw;
+        width:3vw;
+
+        letter-spacing: 2vw;
+      }
+      #line div{
+        height: 0.1vw;
+        width:2vw;
+        background: black;
+        display: inline-block;
+      }
+    
+    </style>
+</head>
+<body >
+    <input on="
+      
+      console.log('event');
+      " id="textbox">
+    <input onclick="" id="textbox2">
+    <div id="line">
+      <div id="line1"></div>
+      <div id="line2"></div>
+    </div>
+    
+    <button onclick="
+      
+
+      if(Inputs.value === ''){
+        Inputs.value += `A`;
+      }else if(Inputs2.value ===  ''){
+        Inputs2.value += `B`;
+      }
+      console.log(Inputs2.value)
+      if(Inputs2.value === 'B'){
+        console.log('what');
+      }
+      console.log(event);
+
+    " class="btn" onclick="
+  console.log(event);
+">A</button> 
+
+
+     <button onclick="
+      
+    Inputs.value += 'B';
+   
+  " id="btn">B</button>   
+  <button onclick="
+      
+  Inputs.innerHTML += 'C';
+  console.log(Inputs.innerHTML.charAt(0));
+" id="btn">C</button>           
+  <script>
+      let Inputs = document.querySelector('#textbox');
+      let Inputs2 = document.querySelector('#textbox2');
+      let Btn =document.querySelector('#btn');
+     
+  </script>
+</body>
+</html>
