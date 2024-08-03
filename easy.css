@@ -98,8 +98,8 @@ input{
     text-transform: uppercase;
 }
 input:focus{
-  
-  outline: none;
+   outline-color: brown;
+  border-bottom-color: green;
 }
 .key-press{
     
